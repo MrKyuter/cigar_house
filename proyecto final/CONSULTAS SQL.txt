@@ -1,0 +1,51 @@
+MOSTRAR TODOS LOS PRODUCTOS:
+
+SELECT
+    producto.nombre,
+    categoria.nombre_categoria,
+    producto.precio,
+    producto.stock
+FROM producto
+INNER JOIN categoria
+ON producto.id_categoria = categoria.id_categoria;
+
+Productos con precio mayor a $600
+
+SELECT
+    nombre,
+    precio
+FROM producto
+WHERE precio > 600;
+
+Pedidos con nombre del usuario
+
+SELECT
+    usuario.nombre_usuario,
+    producto.nombre,
+    detalle_pedido.cantidad
+FROM usuario
+INNER JOIN pedido
+ON usuario.id_usuario = pedido.id_usuario
+INNER JOIN detalle_pedido
+ON pedido.id_pedido = detalle_pedido.id_pedido
+INNER JOIN producto
+ON detalle_pedido.id_producto = producto.id_producto;
+
+Productos ordenados por precio
+
+SELECT
+    nombre,
+    precio
+FROM producto
+ORDER BY precio DESC;
+
+Múltiples condiciones
+
+SELECT
+    producto.nombre,
+    producto.stock
+FROM producto
+INNER JOIN categoria
+ON producto.id_categoria = categoria.id_categoria
+WHERE categoria.nombre_categoria = 'Habano'
+AND producto.stock > 5;

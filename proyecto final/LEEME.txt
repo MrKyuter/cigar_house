@@ -1,0 +1,12 @@
+PROYECTO CIGAR HOUSE - ARCHIVOS SQL
+
+Orden para ejecutar en una base nueva:
+1. estructura.sql
+2. datos.sql
+3. usuarios.sql
+4. vistas.sql
+5. consultas.sql (ejecuta consultas de demostración)
+
+Los usuarios MySQL y sus contraseñas están definidos en usuarios.sql.
+Los valores largos en el campo contrasena de usuario son hashes de la aplicación PHP,
+no son las contraseñas de los usuarios MySQL.
